@@ -2,7 +2,8 @@ $msname = 'SGOM01'
 $SealedMPName = 'Windows Server 2012 Operating System (Monitoring)'
 $OverrideMPName = 'Test OS Override'
 
-Import-Module -Name OperationsManagerNew-SCOMManagementGroupConnection -ComputerName $msname
+Import-Module -Name OperationsManager
+New-SCOMManagementGroupConnection -ComputerName $msname
 
 $mps = Get-SCOMManagementPack |? {$_.DisplayName -eq $SealedMPName}
 $overridemp = Get-SCOMManagementPack -DisplayName $OverrideMPName
